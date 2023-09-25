@@ -33,3 +33,34 @@ npm run dev
 ### setup instruction tailwind
 
 [ tailwind official instruction docs](https://tailwindcss.com/docs/installation)
+
+1. install tailwind dependency through npm
+```
+npm install -D tailwindcss
+
+```
+2. create tailwind.config.js
+
+```
+npx tailwindcss init
+```
+
+3. tailwind.config.js ki content property me bataenge ki kaun kaun se file and folder par tailwind apply karni hai
+
+```
+"./src/**/*.{html,js}"
+```
+4. tailwind css framework ko ek css(index.css) file me daal lenge through follwing command
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+5. run command for ki index.css run karao and uski utility classes App.css me daal do and continuesly watch karte raho if changing
+
+
+```
+npx tailwindcss -i ./src/index.css -o ./src/App.css --watch
+```
