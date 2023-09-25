@@ -27,7 +27,9 @@ npm install
 npm run dev
 
 ```
-
-
 <!-- git remote add origin https://github.com/MohammadSharifAnsari/LMS-frontend.git -->
 <!-- git push -u origin cmaster -->
+
+### setup instruction tailwind
+
+[ tailwind official instruction docs](https://tailwindcss.com/docs/installation)
