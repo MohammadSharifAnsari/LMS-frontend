@@ -64,3 +64,10 @@ npx tailwindcss init
 ```
 npx tailwindcss -i ./src/index.css -o ./src/App.css --watch
 ```
+
+
+### addinng plugins(means library)
+```
+npm install react-redux react-router-dom react-icons react-chartjs-2 chart.js daisyui axios react-hot-toast @tailwindcss/line-clamp
+
+```
