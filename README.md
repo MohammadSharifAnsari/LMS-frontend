@@ -1,3 +1,6 @@
+<!-- git push -u origin cmaster  -->
+<!-- npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch -->
+<!-- git remote add origin https://github.com/MohammadSharifAnsari/LMS-frontend.git -->
 # LMS-frontend
 
 ### set up instriction
@@ -70,4 +73,40 @@ npx tailwindcss -i ./src/index.css -o ./src/App.css --watch
 ```
 npm install react-redux react-router-dom react-icons react-chartjs-2 chart.js daisyui axios react-hot-toast @tailwindcss/line-clamp
 
+```
+### add eslint library simple import sort to react or vite project
+[eslint official docs for simple import sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort?activeTab=readme)
+
+1. install eslint simple import sort package 
+```
+npm install --save-dev eslint-plugin-simple-import-sort
+```
+2. add plugins in eslintrc.cjs
+```
+  plugins: [..., 'simple-import-sort'],
+```
+3. Add rules in ellintrc.cjs
+
+```
+    rules: {
+    'simple-import-sort/imports': 'error',
+    "simple-import-sort/exports": "error",
+    ....
+    }
+```
+4.configure vs code setting for auto fix
+
+```
+1. go to setting on vs code -> then search for setting and select edit in setting json
+2. open setting json
+3. add
+"editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+
+
+```
+5. for run this plugin run given command on terminal
+```
+npx eslint . --ext .js,.jsx --fix
 ```
