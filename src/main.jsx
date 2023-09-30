@@ -4,9 +4,12 @@ import "./index.css";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
 import {Toaster} from "react-hot-toast"
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+
 import App from "./App.jsx";
+import store from "./REDUX/store.js";
 
 // npx eslint . --ext .js,.jsx --fix
 
@@ -15,9 +18,12 @@ import App from "./App.jsx";
 //library import
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+
   <BrowserRouter>
     
     <App />
   <Toaster/>
   </BrowserRouter>
+  </Provider>
 );
