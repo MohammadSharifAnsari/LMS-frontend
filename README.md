@@ -33,25 +33,29 @@ npm run dev
 <!-- git remote add origin https://github.com/MohammadSharifAnsari/LMS-frontend.git -->
 <!-- git push -u origin cmaster -->
 
-### setup instruction tailwind
+### setup instruction tailwind with vite
 
 [ tailwind official instruction docs](https://tailwindcss.com/docs/installation)
 
 1. install tailwind dependency through npm
 ```
-npm install -D tailwindcss
+npm install -D tailwindcss postcss autoprefixer
 
 ```
 2. create tailwind.config.js
 
 ```
-npx tailwindcss init
+npx tailwindcss init -p
+
 ```
 
 3. tailwind.config.js ki content property me bataenge ki kaun kaun se file and folder par tailwind apply karni hai
 
 ```
-"./src/**/*.{html,js}"
+ content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ]
 ```
 4. tailwind css framework ko ek css(index.css) file me daal lenge through follwing command
 

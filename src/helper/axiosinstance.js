@@ -12,4 +12,5 @@ axiosInstance.defaults.baseURL=BASE_URL;
 axiosInstance.defaults.withCredentials=true;
 
 // you can read axios.intance
+export default axiosInstance;
 

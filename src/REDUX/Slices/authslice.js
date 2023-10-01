@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit'
 
-const initailState={
+const initialState={
     // isLoggedIn check ki user login hai ya nhi
     isLoggedIn:localStorage.getItem('isLoggedIn')||false,
     // role show about the role of user
