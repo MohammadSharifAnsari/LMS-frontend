@@ -74,10 +74,19 @@ npx tailwindcss -i ./src/index.css -o ./src/App.css --watch
 
 
 ### addinng plugins(means library)
+1. run particular command
+
 ```
 npm install react-redux react-router-dom react-icons react-chartjs-2 chart.js daisyui axios react-hot-toast @tailwindcss/line-clamp
 
 ```
+
+2. add following details in plugins of tailwind config
+
+```
+ plugins: [require("daisyui"),require("@tailwindcss/line-clamp")],
+```
+
 ### add eslint library simple import sort to react or vite project
 [eslint official docs for simple import sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort?activeTab=readme)
 

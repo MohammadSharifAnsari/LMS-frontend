@@ -11,6 +11,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import store from "./REDUX/store.js";
 
+
 // npx eslint . --ext .js,.jsx --fix
 
 //css import
@@ -18,12 +19,13 @@ import store from "./REDUX/store.js";
 //library import
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    
-
+  
   <BrowserRouter>
+
+  <Provider store={store}>
+ 
     <App />
+  </Provider>
   <Toaster/>
   </BrowserRouter>
-  </Provider>
 );
