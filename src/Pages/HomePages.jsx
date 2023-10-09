@@ -1,6 +1,7 @@
-import HomeLayout from "../Layouts/HomeLayout.jsx"
 import { Link } from "react-router-dom";
-import myimage from '../im2-removebg-preview (4).png'
+
+import myimage from '../assets/images/im2-removebg-preview (4).png'
+import HomeLayout from "../Layouts/HomeLayout.jsx"
 
 function HomePage(){
 
@@ -51,7 +52,7 @@ We have a large library of courses taught by highly skilled and qualified facult
 
 <div className=" w-1/2 flex justify-center items-center ">
 
-<img src={myimage} alt="HomePage Image" className=" h-72 " />
+<img src={myimage} alt="HomePage Image" className=" h-72 " style={{ filter:"contrast(200%); " }} />
 
 </div>
 

@@ -17,16 +17,16 @@ Copyright &#169; {year} | All right reserved
     </section>
 <section className=' flex items-center justify-center gap-5 text-2xl text-white '>
 
-<a href="https://WWW.facebook.com" target='_blank' className=' hover:text-yellow-500 transition-all ease-in-out duration-300 ' >
+<a href="https://WWW.facebook.com" target='_blank' className=' hover:text-yellow-500 transition-all ease-in-out duration-300 ' rel="noreferrer" >
     <BsFacebook/>
 </a>
-<a href="https://WWW.instagram.com" target='_blank' className=' hover:text-yellow-500 transition-all ease-in-out duration-300 ' >
+<a href="https://WWW.instagram.com" target='_blank' className=' hover:text-yellow-500 transition-all ease-in-out duration-300 ' rel="noreferrer" >
     <BsInstagram/>
 </a>
-<a href="https://WWW.linkedin.com" target='_blank' className=' hover:text-yellow-500 transition-all ease-in-out duration-300 ' >
+<a href="https://WWW.linkedin.com" target='_blank' className=' hover:text-yellow-500 transition-all ease-in-out duration-300 ' rel="noreferrer" >
     <BsLinkedin/>
 </a>
-<a href="https://WWW.twitter.com" target='_blank' className=' hover:text-yellow-500 transition-all ease-in-out duration-300 ' >
+<a href="https://WWW.twitter.com" target='_blank' className=' hover:text-yellow-500 transition-all ease-in-out duration-300 ' rel="noreferrer" >
     <BsTwitter/>
 </a>
 

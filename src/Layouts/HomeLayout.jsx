@@ -1,8 +1,9 @@
-import { FiMenu } from "react-icons/fi";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
-import Footer from "../components/footer.jsx";
+import { FiMenu } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
+import Footer from "../components/footer.jsx";
 
 
 
@@ -70,7 +71,7 @@ navigate("/");//when res ke payload me success milegi the navigate
           <label htmlFor=" my-drawer " className=" drawer-overlay "></label>
             
 
-          <ul className=" menu p-4 w-80 md:w-48 bg-base-200 text-base-content ">
+          <ul className=" menu p-4 w-80 h-[100%] md:w-48 bg-base-200 text-base-content ">
             <li className=" w-fit absolute right-2 z-50 ">
               <button onClick={hideDrawer}>
                 <AiFillCloseCircle />
