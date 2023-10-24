@@ -11,7 +11,8 @@ import Footer from './components/footer.jsx';
 import HomeLayout from './Layouts/HomeLayout.jsx';
 import AboutUs from './Pages/AboutUs.jsx';
 import HomePage from './Pages/HomePages.jsx';
-
+import NotFound from './Pages/NotFound.jsx';
+import Signup from './Pages/signup.jsx';
 function App() {
 
   return (
@@ -22,6 +23,9 @@ function App() {
     <Routes>
     <Route path="/" element={<HomePage />} ></Route>
     <Route path="/about" element={<AboutUs />} ></Route>
+<Route path="*" element={<NotFound/>} > </Route>
+<Route path="/signup" element={<Signup/>}  ></Route>
+
     </Routes>
 
 </>

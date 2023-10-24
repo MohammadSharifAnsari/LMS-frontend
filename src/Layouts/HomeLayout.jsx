@@ -7,6 +7,7 @@ import Footer from "../components/footer.jsx";
 
 
 
+
 function HomeLayout({ children }) {
 
 const dispatch=useDispatch();
@@ -108,7 +109,7 @@ navigate("/");//when res ke payload me success milegi the navigate
 <Link to={"/login"} >Login</Link>
 </button>
 <button className=" btn-secondary target:_blank px-4 py-1 font-semibold rounded-md w-full  ">
-<Link to={"/login"}  >Signup</Link>
+<Link to={"/signup"}  >Signup</Link>
 </button>
 
 

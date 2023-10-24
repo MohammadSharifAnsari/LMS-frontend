@@ -1,12 +1,8 @@
-import apj from "../assets/images/apj.png";
-import billgates from "../assets/images/billgates.png";
-import einstein from "../assets/images/einstein.png";
-import mandela from "../assets/images/mandela.png"
+
 import im1 from '../assets/images/pngwing.com.png'
-import jobs from "../assets/images/stevejobs.png";
-import HomeLayout from "../Layouts/HomeLayout.jsx";
 import CarouselSlide from "../components/CarouselSlide";
 import {celebrities} from "../constant/celebritydata.js";
+import HomeLayout from "../Layouts/HomeLayout.jsx";
 function AboutUs(){
 
     return (
