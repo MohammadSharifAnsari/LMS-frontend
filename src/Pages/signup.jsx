@@ -60,7 +60,7 @@ setPreviewImage(this.result);
 
 }
 
-async function CreateAccount(event){
+async function Createaccount(event){
 //form submission by default page kp refresh karne katry karta hai woh nhi karna hai
     event.preventDefault();
 if(!signUpData.email||!signUpData.avatar|| !signUpData.password || !signUpData.fullName){
@@ -84,10 +84,10 @@ formdata.append("name",signUpData.fullName);
 formdata.append("email",signUpData.email);
 formdata.append("password",signUpData.password);
 formdata.append("avatar",signUpData.avatar);
-
+//yahan form data anana mandatory nhi hai direct signupData bhi use kar sakte ho
 //dispatch create account action
 
-const response=await dispatch(createAccount(formdata));
+const response=await dispatch(createAccount(formdata));//yahan direct signupdata dalna padega
 console.log("response>",response);
 if(response?.payload?.success){
 
@@ -116,7 +116,7 @@ return(
     <HomeLayout>
 <div className=" flex items-center justify-center h-[100vh] ">
 
-<form noValidate onSubmit={ CreateAccount } className="flex flex-col justify-center gap-3 rounded-lg p-4 text-white w-96 shadow-[0_0_10px_black]">
+<form noValidate onSubmit={ Createaccount } className="flex flex-col justify-center gap-3 rounded-lg p-4 text-white w-96 shadow-[0_0_10px_black]">
 
 <h1 className=" text-center text-2xl font-bold">Registration Page</h1>
 <label htmlFor="image_upload" className=" cursor-pointer">
