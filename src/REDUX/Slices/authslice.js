@@ -44,13 +44,13 @@ export const login=createAsyncThunk("/auth/login",async(data)=>{
     try{
         const res=axiosInstance.post("/user/login",data);//yahan await lagate to toast aane me bhi time lagta
         toast.promise(res,{
-            loading:"wait! authentication in progress..",
+            loading:"wait! authentication in progress...",
             success:(data)=>{
                 return data?.data?.message;
             },
             error:"Failed to login "
         });
-        return (await res).data
+        return (await res).data//yahan se jo bhi return karega woh as it is action ke payload me exists karega extrareducer me jo action hai uske payload me .
 
     }
     catch(error){
@@ -63,6 +63,35 @@ export const login=createAsyncThunk("/auth/login",async(data)=>{
 
 })
 
+export const Logout=createAsyncThunk("auth/logout",async()=>{
+
+try{
+
+const res=axiosInstance.get("user/logout");
+
+toast.promise(res,{
+    loading:"wait! logout in progress...",
+    success:(data)=>{
+        return data?.data?.message;
+    },
+    error:"Failed to logout "
+});
+
+return (await res).data;
+
+}
+catch(err){
+
+    console.log(err);
+toast.error(err?.responce?.data?.message);
+
+
+}
+
+
+})
+
+
 
 
 const authSlice=createSlice({
@@ -70,7 +99,11 @@ name:'auth',
 initialState,
 reducers:{},
 //state means initial state
-extraReducers:(login.fulfilled,(state,action)=>{//login fullfilled hone ke baad backend se responce jo aaega yeh woh hai
+extraReducers:(builder)=>{
+
+   builder.addCase(login.fulfilled,(state,action)=>{//yeh action object redux toolkit bna kar deti hai humne nhi bnaya and iska format fix hota hai
+
+    console.log("action>",action);
 localStorage.setItem("data",JSON.stringify(action?.payload?.user));
 localStorage.setItem("isLoggedIn",true);
 localStorage.setItem("role",action?.payload?.user?.role);
@@ -80,7 +113,17 @@ state.role=action?.payload?.user?.role;
 
 
 })
+.addCase(Logout.fulfilled,(state)=>{
 
+localStorage.clear();
+
+
+    state.isLoggedIn=false;
+    state.data={};
+    state.role="";
+})
+
+}
 
 });
 

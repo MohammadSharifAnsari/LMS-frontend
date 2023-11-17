@@ -2,7 +2,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-
+import { Logout } from "../REDUX/Slices/authslice.js";
 import Footer from "../components/footer.jsx";
 
 
@@ -24,12 +24,14 @@ const role=useSelector((state)=>{
 //e is event object
 async function handleLogout(e){
   e.preventDefault();//because logout link tag ke andar laga hai then e.preventdefault() us link par jane se rok dega
-  // const res=await dispatch(Logout());
+  const res=await dispatch(Logout());
 // jab reducer  likhenge tab yeh work karega
 
-// if(res?.payload?.success)
+if(res?.payload?.success){
 
-navigate("/");//when res ke payload me success milegi the navigate
+  
+  navigate("/");//when res ke payload me success milegi the navigate
+}
 
 }
 
