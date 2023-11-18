@@ -143,12 +143,6 @@ if(res?.payload?.success){
 
 ) }
 
-
-
-
-
-          
-
           </ul>
 
 
@@ -167,16 +161,7 @@ if(res?.payload?.success){
 
   );
 
-
-
-
 }
-
-
-
-
-
-
 
 
 export default HomeLayout;
