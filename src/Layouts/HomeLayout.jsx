@@ -99,6 +99,13 @@ if(res?.payload?.success){
             <li>
               <Link to="/about">About Us</Link>
             </li>
+            {
+              (isLoggedIn&&role=='ADMIN')?( <li>
+                <Link to="/course/create">Create new course</Link>
+              </li>):""
+            }
+
+            
 {!isLoggedIn&&( 
 
 <li className=" absolute bottom-4 w-[90%]">

@@ -25,6 +25,32 @@ toast.error(error?.response?.data?.message)
     }
 
 })
+export const createNewCourse=createAsyncThunk("/course/create",async (data)=>{
+    try{
+
+        let formData=new FormData();//multipart form hai n isliye for data bnanan padega
+formData.append("title",data?.title);
+formData.append("description",data?.description);
+formData.append("category",data?.category);
+formData.append("thumbnail",data?.thumbnail);
+ formData.append("createdBy", data?.createdBy);
+
+
+        const response=axiosInstance.post("/course",formData);
+        console.log("40 line");
+        toast.promise(response,{
+            loading:"Creating new course...",
+            success:"Course created successfully",
+            error:"Failed to create course",
+        })
+        return (await response).data;
+
+    }
+    catch(error){
+        console.log("error>>",error);
+        toast.error(error?.response?.data?.message);
+    }
+})
 
 
 const courseSlice=createSlice({
@@ -52,3 +78,5 @@ extraReducers:(builder)=>{
 
 
 export default courseSlice.reducer
+
+
