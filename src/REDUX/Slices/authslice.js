@@ -9,7 +9,7 @@ const initialState={
     // role show about the role of user
     role:localStorage.getItem('role')||"",
     // data me extra data regarding user store karaenge 
-    data:localStorage.getItem('data')||{}
+    data:JSON.parse(localStorage.getItem('data'))||{}
 
 }
 export const createAccount=createAsyncThunk("/auth/signup",async(data)=>{
