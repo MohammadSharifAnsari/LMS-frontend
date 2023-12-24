@@ -68,6 +68,7 @@ try{
 
     });
     
+    
        return response.data;
 
 }
@@ -149,7 +150,7 @@ builder
     toast.success(action?.payload?.message);
     state.isPaymentVerified=action?.payload?.success;
 })
-.addCase(getPaymentRecord.fullfilled,(state,action)=>{
+.addCase(getPaymentRecord.fulfilled,(state,action)=>{
    
     state.allPayments=action?.payload?.payment;
 // state.finalMonths=action?.payload?.finalMonths;
