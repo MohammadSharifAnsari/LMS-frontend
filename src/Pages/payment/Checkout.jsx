@@ -9,7 +9,7 @@ import {
 import toast from "react-hot-toast";
 import HomeLayout from "../../Layouts/HomeLayout.jsx";
 import { BiRupee } from "react-icons/bi";
-
+import { getUserData } from "../../REDUX/Slices/authslice";
 function Checkout() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ function Checkout() {
 
     const options = {
       key: razorpayKey,
-      order_id: subscription_id,
+      subscription_id: subscription_id,
       name: "Coursify Pvt.Ltd",
       description: "subscription", //payment complete hone par handler call ho jaega
       theme: {
@@ -51,17 +51,18 @@ function Checkout() {
         email: userData.email,//yahan agar kuch nhi likhenge to payment gaitway par information deni padegi
         name: userData.name,
       },
+      //jab payment success ho jaegi tab handler function execute hoga aur yeh function razorpay ka object execute karega 
       handler: async function (response) {
         //response object razorpay se milega jisme yeh teenon property filled hongi
         paymentDetails.razorpay_payment_id = response.razorpay_payment_id;
-        paymentDetails.razorpay_subscription_id =subscription_id;
+        paymentDetails.razorpay_subscription_id =response.razorpay_subscription_id;
         paymentDetails.razorpay_signature = response.razorpay_signature;
         toast.success("Payment successfull");
-        console.log("i am ispayment verified",isPaymentVerified);
+        
        const res= await dispatch(verifyUserPayment(paymentDetails));
-        console.log("i am ispayment verified",isPaymentVerified);
+          await dispatch(getUserData());
      
-console.log("i am ispayment verified",isPaymentVerified);
+
         (res?.payload?.success?navigate("/checkout/success"): navigate("/checkout/fail"))
 
       },
