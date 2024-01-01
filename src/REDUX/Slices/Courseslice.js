@@ -37,7 +37,7 @@ formData.append("thumbnail",data?.thumbnail);
 
 
         const response=axiosInstance.post("/course",formData);
-        console.log("40 line");
+     
         toast.promise(response,{
             loading:"Creating new course...",
             success:"Course created successfully",
@@ -47,7 +47,7 @@ formData.append("thumbnail",data?.thumbnail);
 
     }
     catch(error){
-        console.log("error>>",error);
+      
         toast.error(error?.response?.data?.message);
     }
 })
@@ -66,7 +66,7 @@ extraReducers:(builder)=>{
     builder.addCase(getAllCourses.fulfilled,(state,action)=>{
 
         if(action.payload){
-            console.log("courses>",action.payload);
+          
             state.courseData=[...action.payload];
         }
 

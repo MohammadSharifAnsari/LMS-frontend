@@ -53,7 +53,7 @@ toast.error(error?.response?.data?.message);
     }
 
 })
-export const  deleteCourseLectures=createAsyncThunk("/course/lecture/delet",async (data)=>{
+export const  deleteCourseLectures=createAsyncThunk("/course/lecture/delete",async (data)=>{
 
     try{
 
