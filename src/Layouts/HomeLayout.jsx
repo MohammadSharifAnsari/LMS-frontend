@@ -89,6 +89,11 @@ if(res?.payload?.success){
               <Link to="/admin/dashboard">Admin Dashboard</Link>
             </li>
           ) }
+            {
+              (isLoggedIn&&role=='ADMIN')?( <li>
+                <Link to="/course/create">Create new course</Link>
+              </li>):""
+            }
 
             <li>
               <Link to="/courses">All Courses</Link>
@@ -99,11 +104,7 @@ if(res?.payload?.success){
             <li>
               <Link to="/about">About Us</Link>
             </li>
-            {
-              (isLoggedIn&&role=='ADMIN')?( <li>
-                <Link to="/course/create">Create new course</Link>
-              </li>):""
-            }
+          
 
             
 {!isLoggedIn&&( 

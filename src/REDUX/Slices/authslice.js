@@ -28,7 +28,7 @@ export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
 
         return (await res).data;
     } catch (error) {
-        console.log(error);
+      
         toast.error(error?.response?.data?.message);
     }
 });
@@ -46,7 +46,7 @@ export const login = createAsyncThunk("/auth/login", async (data) => {
         });
         return (await res).data; //yahan se jo bhi return karega woh as it is action ke payload me exists karega extrareducer me jo action hai uske payload me .
     } catch (error) {
-        console.log(error);
+      
         toast.error(error?.response?.data?.message);
     }
 });
@@ -65,7 +65,7 @@ export const Logout = createAsyncThunk("auth/logout", async () => {
 
         return (await res).data;
     } catch (err) {
-        console.log(err);
+       
         toast.error(err?.responce?.data?.message);
     }
 });
@@ -75,7 +75,7 @@ export const updateProfile = createAsyncThunk(
     async (data) => {
         try {
             const res = axiosInstance.put(`/user/update/${data[0]}`, data[1]); //user ki id url me deni hogi n
-console.log("data from thunk form data",data);
+
             toast.promise(res, {
                 loading: "wait! profile update in progress...",
                 success: (data) => {
@@ -86,7 +86,7 @@ console.log("data from thunk form data",data);
 
             return (await res).data;
         } catch (err) {
-            console.log(err);
+          
             toast.error(err?.responce?.data?.message);
         }
     }
@@ -98,7 +98,7 @@ export const getUserData = createAsyncThunk(
             const res = axiosInstance.get('/user/me'); 
             return (await res).data;
         } catch (err) {
-            console.log(err);
+  
             toast.error(err?.message);
         }
     }
@@ -115,7 +115,6 @@ const authSlice = createSlice({
                 //yeh action object redux toolkit bna kar deti hai humne nhi bnaya and iska format fix hota hai
                 //thunk jo return kar rha hai n woh action ke payload me chla jata hai
 
-                console.log("action>", action);
                 localStorage.setItem("data", JSON.stringify(action?.payload?.user));
                 localStorage.setItem("isLoggedIn", true);
                 localStorage.setItem("role", action?.payload?.user?.role);
@@ -131,7 +130,7 @@ const authSlice = createSlice({
                 state.role = "";
             })
             .addCase(getUserData.fulfilled,(state,action)=>{
-                console.log("action>", action);
+               
                 if(!action?.payload?.user){
                     return 
                 }

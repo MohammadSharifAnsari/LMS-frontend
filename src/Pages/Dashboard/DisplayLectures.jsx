@@ -109,7 +109,7 @@ await dispatch(getCourseLectures(courseId));
           </ul>
         </div>}
       {
-        lectures.length==0 &&  <button onClick={()=>{ navigate("/course/addLecture",{state:{...state}}) }} className=" btn-primary px-2 py-1 rounded-md font-semibold text-sm ">
+        lectures.length==0 && role=='ADMIN'&& <button onClick={()=>{ navigate("/course/addLecture",{state:{...state}}) }} className=" btn-primary px-2 py-1 rounded-md font-semibold text-sm ">
         Add new lecture
       </button>
       }
