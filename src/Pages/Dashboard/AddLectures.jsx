@@ -12,7 +12,7 @@ function AddLectures() {
   const navigate = useNavigate();
 
   let [userInput, setUserInput] = useState({
-    id: courseDetails._id,
+    id: courseDetails?._id,
     lecture: undefined,
     title: "",
     description: "",
@@ -45,7 +45,7 @@ function AddLectures() {
     if (response?.payload?.success) {
       navigate(-1);
       setUserInput({
-        id: courseDetails._id,
+        id: courseDetails?._id,
         lecture: undefined,
         title: "",
         description: "",

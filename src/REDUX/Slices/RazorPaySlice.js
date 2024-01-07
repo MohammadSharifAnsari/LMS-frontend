@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import toast from "react-hot-toast"
-import axiosInstance from "../../helper/axiosinstance"
+import axiosInstance from "../../helper/axiosinstance.js"
 
 // { object that return by thunk 
 //     data:{
@@ -87,7 +87,7 @@ try{
 toast.promise(response,{
     loading:"Getting the payment records",
     success:(data)=>{//yeh data promise response ke resolve hone par jo data aaega woh hai
-        return data.data.message;
+        return data?.data?.message;
     },
     error:"Failed to get payment records"
 })
@@ -153,8 +153,8 @@ builder
 .addCase(getPaymentRecord.fulfilled,(state,action)=>{
    
     state.allPayments=action?.payload?.payment;
-// state.finalMonths=action?.payload?.finalMonths;
-// state.monthlySalesRecord=action.payload.monthlySalesRecord;
+state.finalMonths=action?.payload?.finalMonths;
+state.monthlySalesRecord=action?.payload?.monthlySalesRecord;
 })
 
     }

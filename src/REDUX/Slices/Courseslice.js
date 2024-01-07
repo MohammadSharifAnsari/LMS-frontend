@@ -1,6 +1,5 @@
-
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
-import axiosInstance from '../../helper/axiosinstance'
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
+import axiosInstance from '../../helper/axiosinstance.js'
 import toast from 'react-hot-toast';
 
 const initialState={
@@ -25,6 +24,7 @@ toast.error(error?.response?.data?.message)
     }
 
 })
+
 export const createNewCourse=createAsyncThunk("/course/create",async (data)=>{
     try{
 
@@ -52,6 +52,24 @@ formData.append("thumbnail",data?.thumbnail);
     }
 })
 
+export const deleteCourse=createAsyncThunk("/course/delete",async (id)=>{
+
+    try{
+        const response=axiosInstance.delete(`/course/${id}`);
+        toast.promise(response,{
+            loading:"deleting course ...",
+            success:"Course deleted successfully",
+            error:"Failed to delete the Course",
+           })
+           
+           return (await response)?.data?.course;//courses is an array
+       }
+       catch(error){
+   toast.error(error?.response?.data?.message);
+       }
+   
+   })
+
 
 const courseSlice=createSlice({
 
@@ -65,9 +83,9 @@ extraReducers:(builder)=>{
 
     builder.addCase(getAllCourses.fulfilled,(state,action)=>{
 
-        if(action.payload){
-          
-            state.courseData=[...action.payload];
+        if(action?.payload){
+  
+            state.courseData=[...action?.payload];
         }
 
     })

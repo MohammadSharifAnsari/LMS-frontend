@@ -27,6 +27,7 @@ import CheckoutSuccess from './Pages/payment/CheckoutSuccess.jsx';
 import CheckoutFailure from './Pages/payment/CheckoutFailure.jsx';
 import DisplayLectures from './Pages/Dashboard/DisplayLectures.jsx';
 import AddLectures from './Pages/Dashboard/AddLectures.jsx';
+import AdminDashboard from './Pages/Dashboard/AdminDashboard.jsx';
 function App() {
 
   return (
@@ -49,6 +50,7 @@ function App() {
 
           <Route path='/course/create' element={<CreateCourse />}></Route>
           <Route path='/course/addLecture' element={<AddLectures/>} ></Route>
+          <Route path='/admin/dashboard' element={<AdminDashboard/>} > </Route>
 
         </Route>
 
