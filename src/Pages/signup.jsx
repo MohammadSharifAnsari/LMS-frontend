@@ -70,15 +70,18 @@ if(!signUpData.email||!signUpData.avatar|| !signUpData.password || !signUpData.f
 }
 if(signUpData.fullName.length<5){
     toast.error("Name should be atleast 5 character");
+    return ;
 }
 //cheking valid email
 if(!isEmail(signUpData.email)){
 
 toast.error("Inavlid Email");
+return ;
 }
-if(!isValidPassword(signUpData.password)){
-toast.error(" password at least 8 characters ans must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number or Can contain special characters ");
-}
+// if(!isValidPassword(signUpData.password)){
+// toast.error(" password at least 8 characters ans must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number or Can contain special characters ");
+// return ;
+// }
 
 let formdata=new FormData();
 formdata.append("name",signUpData.fullName);
@@ -117,7 +120,7 @@ return(
     <HomeLayout>
 <div className=" flex items-center justify-center h-[100vh] ">
 
-<form noValidate onSubmit={ Createaccount } className="flex flex-col justify-center gap-3 rounded-lg p-4 text-white w-96 shadow-[0_0_10px_black]">
+<form noValidate  onSubmit={ Createaccount } className="flex flex-col justify-center gap-3 rounded-lg p-4 text-white w-96 shadow-[0_0_10px_black]">
 
 <h1 className=" text-center text-2xl font-bold">Registration Page</h1>
 <label htmlFor="image_upload" className=" cursor-pointer">

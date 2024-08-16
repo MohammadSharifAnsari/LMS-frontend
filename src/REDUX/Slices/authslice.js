@@ -7,11 +7,11 @@ const initialState = {
     isLoggedIn: localStorage.getItem("isLoggedIn") || false,
     // isLoggedIn:false,
     // role show about the role of user
-    role: localStorage.getItem("role") || "",
+    role: localStorage.getItem("role") || "user",
     // data me extra data regarding user store karaenge
-    data: localStorage.getItem("data")!=undefined?JSON.parse(localStorage.getItem("data")) : {},
+    data: localStorage.getItem("data")!=="undefined"?JSON.parse(localStorage.getItem("data")) :{},
 };
-export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
+export const createAccount = createAsyncThunk("/auth/signup", async (data) =>{
     //create account itself an object
     try {
         const res = axiosInstance.post("/user/register", data);
@@ -111,7 +111,7 @@ const authSlice = createSlice({
     //state means initial state
     extraReducers: (builder) => {
         builder
-            .addCase(login.fulfilled, (state, action) => {
+            .addCase(login.fulfilled, (state, action)=>{
                 //yeh action object redux toolkit bna kar deti hai humne nhi bnaya and iska format fix hota hai
                 //thunk jo return kar rha hai n woh action ke payload me chla jata hai
 
@@ -127,7 +127,7 @@ const authSlice = createSlice({
 
                 state.isLoggedIn = false;
                 state.data = {};
-                state.role = "";
+                state.role = "user";
             })
             .addCase(getUserData.fulfilled,(state,action)=>{
                
@@ -142,7 +142,15 @@ const authSlice = createSlice({
                 state.role = action?.payload?.user?.role;
 
 
-            });
+            }).addCase(createAccount.fulfilled,(state,action)=>{
+                localStorage.setItem("data", JSON.stringify(action?.payload?.user));
+                localStorage.setItem("isLoggedIn", true);
+                localStorage.setItem("role", action?.payload?.user?.role);
+                state.isLoggedIn = true;
+                state.data = action?.payload?.user;
+                state.role = action?.payload?.user?.role;
+
+            })
     },
 });
 

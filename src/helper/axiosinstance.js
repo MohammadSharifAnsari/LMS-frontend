@@ -3,7 +3,9 @@ import axios from "axios";
 
 
 // server ka url hai base url
-const BASE_URL='http://localhost:7000/api/v1';
+console.log("pricess>>");
+
+const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
 // const BASE_URL='http:// localhost:5014/api/v1';
 
 // axois.create() create the instance of axios

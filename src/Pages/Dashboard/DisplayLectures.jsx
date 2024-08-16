@@ -48,7 +48,7 @@ await dispatch(getCourseLectures(courseId));
           <div className=" space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] ">
             <video
               src={lectures && lectures[currentVideo]?.lecture?.secure_url}
-              className=" object-fill rounded-tl-lg rounded-tr-lg  w-full "
+              className=" aspect-video object-contain  rounded-tl-lg rounded-tr-lg  w-full "
               controls
               disablePictureInPicture
               muted

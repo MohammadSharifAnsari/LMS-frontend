@@ -24,6 +24,7 @@ export const getRazorPayId=createAsyncThunk("/razorpay/getId",async ()=>{
 
 try{
 
+    console.log("razorpay key");
     const response=await axiosInstance.get("/payment/razorpay_key");
 
        return response.data;

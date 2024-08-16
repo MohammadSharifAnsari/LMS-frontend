@@ -73,11 +73,14 @@ function Checkout() {
   }
 
   async function load() {
+    console.log("ssssssssssssssssssssssss");
     await dispatch(getRazorPayId()); //it gives razorpay key to key parameter
     await dispatch(purchaseCourseBundle()); //yeh subscription id de degfa parameter me
+    console.log("ppppppppppppppp");
   }
 
       useEffect(()=>{
+        console.log("hum to call hoo");
   load();
       },[])
 
