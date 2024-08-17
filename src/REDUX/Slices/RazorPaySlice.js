@@ -26,7 +26,7 @@ try{
 
     console.log("razorpay key");
     const response=await axiosInstance.get("/payment/razorpay_key");
-
+console.log("after api call");
        return response.data;
 
 }
@@ -52,7 +52,7 @@ catch(err){
 
     toast.error(err?.response?.data?.message);
 
-
+  
 }
 
 })
