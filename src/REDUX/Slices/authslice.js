@@ -14,7 +14,9 @@ const initialState = {
 export const createAccount = createAsyncThunk("/auth/signup", async (data) =>{
     //create account itself an object
     try {
-        const res = axiosInstance.post("/user/register", data);
+        const res = axiosInstance.post("/user/register", data,{
+            withCredentials: true
+        });
         // const res=await axiosInstance.post('user/register',data);
         //when toast give according to state of promise
         //res is promise
@@ -36,7 +38,9 @@ export const createAccount = createAsyncThunk("/auth/signup", async (data) =>{
 //login is a functuion which actually return a promise
 export const login = createAsyncThunk("/auth/login", async (data) => {
     try {
-        const res = axiosInstance.post("/user/login", data); //yahan await lagate to toast aane me bhi time lagta
+        const res = axiosInstance.post("/user/login", data,{
+            withCredentials: true
+        }); //yahan await lagate to toast aane me bhi time lagta
         toast.promise(res, {
             loading: "wait! authentication in progress...",
             success: (data) => {
