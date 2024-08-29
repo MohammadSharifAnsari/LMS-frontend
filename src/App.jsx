@@ -18,7 +18,7 @@ import CourseList from './Pages/Courses/CourseList.jsx';
 import Contact from './Pages/Contact.jsx';
 import Denied from './Pages/Denied.jsx';
 import CourseDescription from './Pages/Courses/coursedescription.jsx';
-import RequireAuth from './components/auth/requireauth.jsx';
+import RequireAuth from './components/Auth/RequireAuth.jsx';
 import CreateCourse from './Pages/Courses/CreateCourse.jsx';
 import Profile from './Pages/User/Profile.jsx';
 import EditProfile from './Pages/User/EditProfile.jsx';
